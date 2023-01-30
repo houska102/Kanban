@@ -1,12 +1,17 @@
 <template>
-  <div>Home</div>
+  <div>{{ projects }}</div>
 </template>
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, ref } from 'vue';
+import mockProjects from '@/MockData/Projects.js';
 
 export default defineComponent({
   setup() {
-    
+    const projects = ref(mockProjects);
+
+    return {
+      projects
+    }
   },
 })
 </script>
