@@ -1,17 +1,17 @@
-<template>
-  <span>{{ id }}</span>
-</template>
-<script lang="ts">
-import { defineComponent } from 'vue';
+<script lang="ts" setup>
+  import { defineProps } from 'vue';
+  import BacklogItem from '../Backlog/BacklogItem.vue';
 
-export default defineComponent({
-  props: {
+  defineProps({
     id: {
       type: String
     }
-  }
-})
+  })
 </script>
+<template>
+  <span>{{ id }}</span>
+  <BacklogItem />
+</template>
 <style>
   .projects {
     display: flex;

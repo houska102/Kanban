@@ -1,3 +1,10 @@
+<script lang="ts" setup>
+  import { NavigationItem } from '@/models/NavigationItem'
+  const navigationItems: NavigationItem[] = [
+    { route: `/`, label: 'home'},
+    { route: `/about`, label: 'about'}
+  ]
+</script>
 <template>
   <header class="toolbar primary">
     <h1 class="toolbar--app-name">Kanban</h1>
@@ -13,26 +20,6 @@
     </nav>
   </header>
 </template>
-<script lang="ts">
-import { defineComponent } from 'vue'
-
-type NavigationItem = {
-  route: string,
-  label: string
-}
-export default defineComponent({
-  setup() {
-    const navigationItems: NavigationItem[] = [
-      { route: `/`, label: 'home'},
-      { route: `/about`, label: 'about'}
-    ]
-
-    return {
-      navigationItems
-    }
-  },
-})
-</script>
 <style scoped>
 .toolbar {
   height: 48px;

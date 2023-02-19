@@ -1,14 +1,7 @@
-<template>
-  <button class="project-card" @click="$emit('projectClicked', id)">
-    <header class="project-name">{{ name }}</header>
-    <div class="project-description">{{ description }}</div>
-  </button>
-</template>
-<script>
-import { defineComponent } from 'vue'
+<script setup>
+  import { defineEmits, defineProps } from 'vue'
 
-export default defineComponent({
-  props: {
+  defineProps({
     id: {
       type: Number
     },
@@ -18,14 +11,19 @@ export default defineComponent({
     description: {
       type: String,
     }
-  },
-  emits: {
+  })
+  defineEmits({
     projectClicked: {
       id: Number
     }
-  }
-})
+  })
 </script>
+<template>
+  <button class="project-card" @click="$emit('projectClicked', id)">
+    <header class="project-name">{{ name }}</header>
+    <div class="project-description">{{ description }}</div>
+  </button>
+</template>
 <style scoped>
 .project-card{
   width: 300px;

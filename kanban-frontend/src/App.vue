@@ -1,21 +1,11 @@
+<script lang="ts" setup>
+import Content from '@/components/Layout/Content.vue';
+import ToolBar from '@/components/Layout/ToolBar.vue';
+</script>
 <template>
   <ToolBar />
   <Content />
 </template>
-
-<script lang="ts">
-import { Options, Vue } from 'vue-class-component';
-import Content from '@/components/Layout/Content.vue';
-import ToolBar from '@/components/Layout/ToolBar.vue';
-
-@Options({
-  components: {
-    ToolBar,
-    Content,
-  },
-})
-export default class App extends Vue {}
-</script>
 
 <style>
 :root {
