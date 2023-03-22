@@ -8,6 +8,9 @@ import ToolBar from '@/components/Layout/ToolBar.vue';
 </template>
 
 <style>
+* {
+  box-sizing: border-box;
+}
 :root {
   --primary-color: #8bc34a;
   --light-primary-color: #bef67a;
@@ -20,14 +23,14 @@ import ToolBar from '@/components/Layout/ToolBar.vue';
 }
 body {
   background: var(--app-background);
+  padding: 0;
+  margin: 0;
 }
 
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   text-align: center;
   margin-top: 48px;
+  height: calc(100vh - 48px);
 }
 .primary {
   background: var(--primary-color);
@@ -54,5 +57,4 @@ body {
   background: var(--dark-secondary-color);
   color:black;
 }
-
 </style>

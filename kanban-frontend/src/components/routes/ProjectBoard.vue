@@ -1,7 +1,5 @@
 <script lang="ts" setup>
-  import { defineProps } from 'vue';
-  import BacklogItem from '../Backlog/BacklogItem.vue';
-
+  import Backlog from '../Backlog/Backlog.vue'
   defineProps({
     id: {
       type: String
@@ -9,12 +7,35 @@
   })
 </script>
 <template>
-  <span>{{ id }}</span>
-  <BacklogItem />
+  <div class="project-board">
+    <div class="project-header">Kanban header</div>
+    <main class="project-content">
+      <Backlog />
+      <div class="board">
+        board
+      </div>
+    </main>
+  </div>
 </template>
 <style>
-  .projects {
-    display: flex;
-    flex-flow: row wrap;
+  .project-board {
+    display: grid;
+    height: 100%;
+    grid-template-columns: auto;
+    grid-template-rows: 50px auto;
+  }
+  .project-header {
+    position: relative;
+    z-index: 2;
+    -webkit-box-shadow: 0px 2px 1px 0px rgba(105,105,105,0.18);
+    -moz-box-shadow: 0px 2px 1px 0px rgba(105,105,105,0.18);
+    box-shadow: 0px 2px 1px 0px rgba(105,105,105,0.18);
+
+  }
+  .project-content {
+    display: grid;
+    height: auto;
+    grid-template-columns: 250px auto;
+    grid-template-rows: auto;
   }
 </style>

@@ -1,9 +1,11 @@
 <script lang="ts" setup>
   import { NavigationItem } from '@/models/NavigationItem'
-  const navigationItems: NavigationItem[] = [
+  import { ref } from 'vue';
+
+  const navigationItems = ref<NavigationItem[]>([
     { route: `/`, label: 'home'},
     { route: `/about`, label: 'about'}
-  ]
+  ]);
 </script>
 <template>
   <header class="toolbar primary">

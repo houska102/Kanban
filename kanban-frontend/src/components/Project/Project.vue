@@ -1,22 +1,13 @@
-<script setup>
-  import { defineEmits, defineProps } from 'vue'
+<script setup lang="ts">
+  defineProps<{
+    id: number,
+    name: string,
+    description: string
+  }>();
 
-  defineProps({
-    id: {
-      type: Number
-    },
-    name: {
-      type: String,
-    },
-    description: {
-      type: String,
-    }
-  })
-  defineEmits({
-    projectClicked: {
-      id: Number
-    }
-  })
+  defineEmits<{
+    (e: 'projectClicked', id: number): void
+  }>()
 </script>
 <template>
   <button class="project-card" @click="$emit('projectClicked', id)">
