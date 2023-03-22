@@ -1,18 +1,24 @@
 <script lang="ts" setup>
   import Backlog from '../Backlog/Backlog.vue'
-  defineProps({
-    id: {
-      type: String
-    }
-  })
+  import { Task } from '@/models/backlog'
+import { ref } from 'vue';
+  defineProps<{
+    id: string
+  }>()
+  const inProgressTasks = ref<Task[]>([])
+  const addItemToInProgress = (item: Task) => {
+    inProgressTasks.value.push(item)
+  }
 </script>
 <template>
   <div class="project-board">
     <div class="project-header">Kanban header</div>
     <main class="project-content">
-      <Backlog />
+      <Backlog 
+        @moveItemToBoard="addItemToInProgress"
+      />
       <div class="board">
-        board
+        {{ inProgressTasks }}
       </div>
     </main>
   </div>

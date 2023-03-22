@@ -1,12 +1,15 @@
 <script lang="ts" setup>
-  defineProps<{
+  const props = defineProps<{
     id: number,
     label: string,
     description: string,
   }>();
-  defineEmits<{
+  const emit = defineEmits<{
     (e: 'moveTask', id: number): void
   }>();
+  const handleMoveTaskButtonClick = () => {
+    emit('moveTask', props.id)
+  }
 </script>
 <template>
   <div class="backlog-item">
@@ -16,7 +19,7 @@
     </div>
     <button
       class="backlog-item__move-task-button"
-      @click="$emit('moveTask', id)"
+      @click="handleMoveTaskButtonClick"
     >></button>
   </div>
 </template>
@@ -44,5 +47,9 @@
     border: none;
     background: var(--secondary-color);
     cursor: pointer;
+    transition: padding-left 0.1s ease-out;
+  }
+  .backlog-item:hover .backlog-item__move-task-button {
+    padding-left: 10px;
   }
 </style>

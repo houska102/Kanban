@@ -1,13 +1,13 @@
 <script setup lang="ts">
   import { ref } from 'vue';
-  import { BacklogItem as BacklogItemType} from '@/models/backlog'
+  import { Task } from '@/models/backlog'
   import BacklogItem from '../Backlog/BacklogItem.vue';
 
   const emit = defineEmits<{
-    (e: 'moveItemToBoard', item: BacklogItemType): void
+    (e: 'moveItemToBoard', item: Task): void
   }>()
 
-  const projectBacklog = ref<BacklogItemType[]>([
+  const projectBacklog = ref<Task[]>([
     { id: 1, label: "task 1", description: "description of the first task that is suprisingly long" },
     { id: 2, label: "task 2", description: "description of the second task" },
     { id: 3, label: "task 3", description: "third lol" }

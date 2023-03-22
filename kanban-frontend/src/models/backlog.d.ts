@@ -1,4 +1,4 @@
-export type BacklogItem = {
+export type Task = {
   id: number,
   label: string,
   description: string,
