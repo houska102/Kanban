@@ -8,7 +8,7 @@
   }>()
 
   const projectBacklog = ref<Task[]>([
-    { id: 1, label: "task 1", description: "description of the first task that is suprisingly long" },
+    { id: 1, label: "task 1 with a long label like really long", description: "description of the first task that is suprisingly long" },
     { id: 2, label: "task 2", description: "description of the second task" },
     { id: 3, label: "task 3", description: "third lol" }
   ]);

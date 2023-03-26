@@ -13,8 +13,8 @@
 </script>
 <template>
   <div class="backlog-item">
-    <h3 class="backlog-item--label">{{ label }}</h3>
-    <div class="backlog-item--description">
+    <h3 class="backlog-item--label" :title="label">{{ label }}</h3>
+    <div class="backlog-item--description" :title="description">
       {{ description }}
     </div>
     <button
@@ -33,6 +33,9 @@
   .backlog-item--label {
     padding: 0;
     margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   .backlog-item--description {
     white-space: nowrap;
